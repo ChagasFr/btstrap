@@ -12,6 +12,8 @@
             .then(resp => resp.text())
             .then(html => {
                 destino.innerHTML = html
+                // pegando elementos de uma tag javascript dentro do html
+                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
             })
     }
 
