@@ -13,7 +13,9 @@
             .then(html => {
                 destino.innerHTML = html
                 // pegando elementos de uma tag javascript dentro do html
-                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
+                const resultado = html.match(/\<script\>([\s\S]*)\<\/script\>/)
+                if(resultado && resultado.length >= 2) 
+                eval(resultado[1])
             })
     }
 
